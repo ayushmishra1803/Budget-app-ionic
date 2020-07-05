@@ -15,20 +15,22 @@
           <ion-card-content>
             <ion-item>
               <ion-label position="floating">Enter the Expences</ion-label>
-              <ion-input type="text"></ion-input>
+              <ion-input type="text" [(ngModel)]="enteredexpences" required></ion-input>
             </ion-item>
 
             <ion-item>
               <ion-label position="floating">Expense Account</ion-label>
-              <ion-input type="tel"></ion-input>
+              <ion-input type="tel" [(ngModel)]="enteredammount"></ion-input>
             </ion-item>
-            <ion-button fill="outline" color="danger"
-              ><ion-icon slot="end" name="trash-outline"></ion-icon>Clear
-            </ion-button>
+            <div ion-margin-vertical ion-text-right>
+              <ion-button fill="outline" color="danger"(click)="clear()"
+               ><ion-icon slot="end" name="trash-outline"></ion-icon>clear
+              </ion-button>
 
-            <ion-button color="success"
-              ><ion-icon slot="end" name="add-outline"></ion-icon>Submit
-            </ion-button>
+              <ion-button color="success"
+                ><ion-icon slot="end" name="add-outline"></ion-icon>Submit
+              </ion-button>
+            </div>
           </ion-card-content>
         </ion-card></ion-col
       >
