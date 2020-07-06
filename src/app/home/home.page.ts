@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
   selector: "app-home",
@@ -6,12 +6,25 @@ import { Component } from '@angular/core';
   styleUrls: ["home.page.scss"],
 })
 export class HomePage {
-  enteredexpences:string;
-  enteredammount:number
- 
+  enteredexpences: string;
+  enteredammount: number;
+expencesreason:string[]=[];
+expencesammount:number[]=[];
   constructor() {}
-  clear(){
-    console.log(`${this.enteredexpences}${this.enteredammount}`);
-    
-  };
+  clear() {
+    if (this.enteredammount > 0 && this.enteredexpences.length > 0) {
+      this.enteredexpences = "";
+      this.enteredammount = 0;
+    }
+  }
+  add() {
+    if (this.enteredammount > 0 && this.enteredexpences.length > 0) {
+        
+      this.expencesreason.push(this.enteredexpences);
+      this.expencesammount.push(this.enteredammount);
+        
+     
+      
+  }
+}
 }
